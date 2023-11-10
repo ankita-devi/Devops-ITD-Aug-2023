@@ -1,0 +1,9 @@
+#Write a script to reverse print a file content without using tac
+#!/bin/bash
+
+echo " enter the file name "
+read file_name
+
+[ ! -f ${file_name} ] && echo "  ${file_name} not exits"
+
+nl "${file_name}" | sort -r |cut -f 2
