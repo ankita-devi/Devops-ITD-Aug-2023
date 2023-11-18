@@ -1,0 +1,39 @@
+pipeline{
+    agent any
+    stages{
+        stage('A'){
+           steps{
+              script{
+                try{
+                    echo "we are in satge A"
+                    sh 'exit 1'
+                }catch (exception e){
+                    echo 'stage A failed'
+                    testresult= "false"
+                }
+              }
+
+            }
+        } 
+        stage('B'){
+            steps{
+                script{
+                    if(!testresult){
+                        echo 'running stage B as stage A failed'
+                    }
+
+                }
+            }
+        }  
+        stage('C'){
+            steps{
+                script{
+                    if(testresult){
+                        echo 'running stage C as stage A succesed'
+                    }
+
+                }
+            }
+        }   
+    }
+}
