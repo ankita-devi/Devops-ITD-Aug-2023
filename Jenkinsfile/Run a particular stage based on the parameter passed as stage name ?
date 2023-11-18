@@ -1,0 +1,34 @@
+pipeline{
+    agent any
+    parameters{
+        choice name : STAGE_NAME
+               choices: ['buid','test']
+               description: 'enter the stage you want to execute'
+    }
+    stages{
+        stage('build'){
+            when{
+                expression{
+                    params.STAGE_NAME == 'build'
+                }
+                steps{
+                    sh'
+                    echo "we are in build stage"
+                    '
+                }
+            }
+        }
+        stage('test'){
+            when{
+                expression{
+                    params.STAGE_NAME == 'test'
+                }
+                steps{
+                    sh'
+                    echo "we are in test stage"
+                    '
+                }
+          }
+        }
+    }
+}  
