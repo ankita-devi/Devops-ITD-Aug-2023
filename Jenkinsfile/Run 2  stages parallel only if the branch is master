@@ -1,0 +1,21 @@
+pipeline{
+    agent any
+    stages{
+        parallel{
+            when{
+                branch 'main'
+            }
+            stage('A'){
+                steps{
+                    sh 'ls-lrt'
+                
+                }
+            }
+            stage('B'){
+                steps{
+                    sh 'sleep 5'
+                }
+            }
+        }
+    }
+}
