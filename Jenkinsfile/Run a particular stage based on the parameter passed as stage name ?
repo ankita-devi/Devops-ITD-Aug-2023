@@ -12,9 +12,7 @@ pipeline{
                     params.STAGE_NAME == 'build'
                 }
                 steps{
-                    sh '
-                    echo "we are in build stage"
-                    '
+                    sh ' echo "we are in build stage" ' 
                 }
             }
         }
