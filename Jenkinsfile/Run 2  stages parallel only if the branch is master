@@ -1,6 +1,7 @@
 pipeline{
     agent any
     stages{
+        stage('parallel'){
         parallel{
             when{
                 branch 'main'
@@ -17,5 +18,6 @@ pipeline{
                 }
             }
         }
+         }
     }
 }
