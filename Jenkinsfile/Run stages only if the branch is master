@@ -3,11 +3,12 @@ pipeline{
     stages{
         stage('A'){
             when{
-                branch 'main'
+                branch 'master'
             }    
             steps{
                 sh '''
                 #!/bin/bash
+                echo "hello"
                 sleep 5
                 '''
             }
