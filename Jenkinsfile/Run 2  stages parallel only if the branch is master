@@ -1,6 +1,7 @@
 pipeline{
     agent any
     stages{
+       satge('parallel run'){
        parallel{
               stage('A'){
                 steps{
@@ -16,5 +17,6 @@ pipeline{
                 }
             }
         }
+     }
     }
 }
