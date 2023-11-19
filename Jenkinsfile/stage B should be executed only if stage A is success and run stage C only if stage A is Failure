@@ -16,15 +16,13 @@ pipeline{
             }
         } 
         stage('B'){
-            steps{
-                script{
-                    if(stageresult== 'false'){
-                        echo 'running stage B as stage A failed'
-                    }else {
-                        echo "skipped B ....."
-                    }
-
+               when{
+                expression{
+                   stageresult== 'false'
                 }
+               }
+            steps{
+                echo "running stage B as stage A failed"
             }
         }  
         stage('C'){
