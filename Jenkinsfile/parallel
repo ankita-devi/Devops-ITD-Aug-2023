@@ -2,10 +2,7 @@ pipeline {
     agent any
     stages {
         stage('Run parallel') {
-           when{
-               branch 'main'
-           }
-            parallel {
+           parallel {
                 stage('A') { 
                     steps {
                        sh 'sleep 5'
