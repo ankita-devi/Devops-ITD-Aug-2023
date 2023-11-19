@@ -6,7 +6,7 @@ pipeline{
               script{
                 try{
                     echo "we are in satge A"
-                   
+                    sh ' exit 1'
                 }catch (Exception e){
                     echo 'stage A failed'
                     stageresult= "false"
@@ -24,6 +24,7 @@ pipeline{
                }
             steps{
                   echo "running stage C as stage A succesed"
+                  sh 'sleep 5'
                  }
         }
        stage('B'){
@@ -34,7 +35,8 @@ pipeline{
                }
             steps{
                 echo "running stage B as stage A failed"
-            }
+                sh 'sleep 5'
+                }
         }  
     }
 }
