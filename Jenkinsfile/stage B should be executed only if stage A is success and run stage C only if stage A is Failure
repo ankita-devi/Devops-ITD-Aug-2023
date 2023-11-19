@@ -7,7 +7,7 @@ pipeline{
                 try{
                     echo "we are in satge A"
                     sh 'exit 1'
-                }catch (exception e){
+                }catch (Exception e){
                     echo 'stage A failed'
                     testresult= "false"
                 }
