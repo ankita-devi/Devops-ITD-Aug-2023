@@ -24,8 +24,10 @@ pipeline{
                 }
                }
             steps{
+               script{
                   echo "running stage C as stage A succesed"
                   sh 'sleep 5'
+                  }
                  }
         }
        stage('B'){
