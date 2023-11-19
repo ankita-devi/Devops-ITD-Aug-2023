@@ -1,0 +1,6 @@
+#Write a Bash script that takes a directory path as an argument and counts the number of files and directories in that directory.
+
+#!/bin/bash
+
+echo "no. of file in the given directory are = $(ls -lrt "$1" | grep '^-'| wc -l)"
+echo "no. of directories in the given directory are = $(ls -lrt "$1" | grep '^d'| wc -l)"
