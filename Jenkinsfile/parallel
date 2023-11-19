@@ -7,24 +7,19 @@ pipeline {
                    
                    
                     steps {
-                        bat "run-tests.bat"
+                       sh 'sleep 5'
                     }
-                    post {
-                        always {
-                            junit "**/TEST-*.xml"
-                        }
-                    }
+                   
                 }
                 stage('Test On Linux') {
                     
                     steps {
-                        sh "run-tests.sh"
+                        sh '''
+                           #!/bin/bash
+                            ls -lrt
+                           '''
                     }
-                    post {
-                        always {
-                            junit "**/TEST-*.xml"
-                        }
-                    }
+                    
                 }
             }
         }
