@@ -15,16 +15,7 @@ pipeline{
 
             }
         } 
-        stage('B'){
-               when{
-                expression{
-                   stageresult== 'false'
-                }
-               }
-            steps{
-                echo "running stage B as stage A failed"
-            }
-        }  
+        
         stage('C'){
             steps{
                 script{
@@ -34,6 +25,16 @@ pipeline{
 
                 }
             }
-        }   
+        }
+       stage('B'){
+               when{
+                expression{
+                   stageresult== 'false'
+                }
+               }
+            steps{
+                echo "running stage B as stage A failed"
+            }
+        }  
     }
 }
