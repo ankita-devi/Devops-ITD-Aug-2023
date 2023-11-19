@@ -1,22 +1,26 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-       satge('parallel run'){
-       parallel{
-              stage('A'){
-                steps{
-                    sh '''
-                       #!/bin/bash
-                       ls-lrt 
-                       '''          
+    stages {
+        stage('Run parallel') {
+           when{
+               branch 'main'
+           }
+            parallel {
+                stage('A') { 
+                    steps {
+                       sh 'sleep 5'
+                    }
+                   
                 }
-            }
-            stage('B'){
-                steps{
-                    sh 'sleep 5'
-                }
+                stage('B') {
+                    steps {
+                        sh '''
+                           #!/bin/bash
+                            ls -lrt
+                           '''
+                     }
+                 }
             }
         }
-     }
     }
 }
