@@ -1,26 +1,22 @@
 pipeline {
     agent any
     stages {
-        stage('Run Tests') {
+        stage('Run parallel') {
             parallel {
-                stage('Test On Windows') {
-                   
-                   
+                stage('A') { 
                     steps {
                        sh 'sleep 5'
                     }
                    
                 }
-                stage('Test On Linux') {
-                    
+                stage('B') {
                     steps {
                         sh '''
                            #!/bin/bash
                             ls -lrt
                            '''
-                    }
-                    
-                }
+                     }
+                 }
             }
         }
     }
