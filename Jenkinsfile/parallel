@@ -2,6 +2,9 @@ pipeline {
     agent any
     stages {
         stage('Run parallel') {
+           when{
+               branch 'main'
+           }
             parallel {
                 stage('A') { 
                     steps {
