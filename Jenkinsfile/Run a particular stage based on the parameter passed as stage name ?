@@ -2,8 +2,10 @@ pipeline{
     agent any
 
    parameters {
-  choice choices: ['build', 'test'], description: 'enter the stage you want to execute', name: 'STAGE_NAME'
-}
+        choice choices: ['build', 'test'],
+               description: 'enter the stage you want to execute', 
+               name: 'STAGE_NAME'
+            }
 
     stages{
         stage('build'){
