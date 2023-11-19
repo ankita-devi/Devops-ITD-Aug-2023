@@ -20,6 +20,8 @@ pipeline{
                 script{
                     if(stageresult== 'false'){
                         echo 'running stage B as stage A failed'
+                    }else {
+                        echo "A is successfuly done ....."
                     }
 
                 }
