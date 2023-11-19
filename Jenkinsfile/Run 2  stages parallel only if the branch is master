@@ -1,14 +1,13 @@
 pipeline{
     agent any
     stages{
-         when{
-                branch 'main'
-                }
-            parallel{
+       parallel{
               stage('A'){
                 steps{
-                    sh 'ls-lrt'
-                
+                    sh '''
+                       #!/bin/bash
+                       ls-lrt 
+                       '''          
                 }
             }
             stage('B'){
