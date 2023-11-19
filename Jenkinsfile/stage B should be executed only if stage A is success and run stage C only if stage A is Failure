@@ -17,14 +17,14 @@ pipeline{
         } 
         
         stage('C'){
-            steps{
-                script{
-                    if(stageresult== 'true'){
-                        echo 'running stage C as stage A succesed'
-                    }
-
+              when{
+                expression{
+                   stageresult== 'true'
                 }
-            }
+               }
+            steps{
+                  echo 'running stage C as stage A succesed'
+                 }
         }
        stage('B'){
                when{
