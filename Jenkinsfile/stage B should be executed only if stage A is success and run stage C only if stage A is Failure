@@ -23,7 +23,7 @@ pipeline{
                 }
                }
             steps{
-                  echo 'running stage C as stage A succesed'
+                  echo "running stage C as stage A succesed"
                  }
         }
        stage('B'){
