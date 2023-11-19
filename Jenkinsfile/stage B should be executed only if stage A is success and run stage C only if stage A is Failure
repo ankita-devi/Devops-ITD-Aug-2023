@@ -18,7 +18,7 @@ pipeline{
         stage('B'){
             steps{
                 script{
-                    if(!testresult){
+                    if(testresult== false){
                         echo 'running stage B as stage A failed'
                     }
 
@@ -28,7 +28,7 @@ pipeline{
         stage('C'){
             steps{
                 script{
-                    if(testresult){
+                    if(testresult== true){
                         echo 'running stage C as stage A succesed'
                     }
 
