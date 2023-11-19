@@ -11,20 +11,20 @@ pipeline{
                 expression{
                     params.STAGE_NAME == 'build'
                 }
+               }
                 steps{
                      echo "we are in build stage" 
                 }
-            }
         }
         stage('test'){
             when{
                 expression{
                     params.STAGE_NAME == 'test'
                 }
+              }
                 steps{
                     echo "we are in test stage"
             }
-          }
         }
     }
 }  
