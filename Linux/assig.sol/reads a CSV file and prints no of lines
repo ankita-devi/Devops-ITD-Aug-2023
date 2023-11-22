@@ -1,0 +1,24 @@
+#script to read a csv file and find the no of lines in it
+
+#!/bin/bash
+
+while read l;do
+        echo "$l"
+done < "csv"
+
+
+echo "here the no of lines in the file are $(wc -l csv | awk -F " " '{print$1}')"
+#we can also this command to find the total number of lines  awk -F ";" 'END{print NR}' csv
+
+#no of columns==  awk -F ";" 'END{print NF}' csv
+
+#ANOTHER WAY======>
+
+##!/bin/bash
+#count=0
+#while read line
+#do
+#    count=$((count+1))
+#    echo "$line"
+#done < "csv"
+#echo Number of lines: $count
