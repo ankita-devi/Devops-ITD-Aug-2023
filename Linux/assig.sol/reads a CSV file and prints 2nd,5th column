@@ -1,0 +1,7 @@
+#. Create a Bash script that reads a CSV file and prints 2nd,5th column in it.
+
+#!/bin/bash
+
+while read line;do
+        echo "$line" | awk -F ";" '{print $2 $4}'
+done < "csv"
