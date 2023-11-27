@@ -1,0 +1,60 @@
+#!/bin/bash
+
+echo 'choose operation to perform ==> Enter
+       1 for addition
+       2 for sustraction
+       3 for multiplication
+       4 for division'
+read choice
+
+echo 'enter total numbers'
+read N
+
+if [[ "$choice" == 1 ]];then
+        sum=0
+        i=1
+        echo 'enter the numbers'
+        while [ $i -le $N ]; do
+                read num
+                sum=$((sum + num))
+                i=$((i + 1))
+        done
+     echo "sum=$sum"
+elif [[ "$choice" == 2 ]];then
+        echo "enter the numbers"
+        i=1
+        while [ $i -le $N ]; do
+                read num
+                if [ $i -eq 1 ];then
+                        S=$((num+num))
+                     fi
+                S=$(($S-num))
+                i=$((i + 1))
+        done
+        echo "result=$S"
+elif [[ "$choice" == 3 ]];then
+        echo "enter the numbers"
+        m=1
+        i=1
+        while [ $i -le $N ]; do
+                read num
+                m=$((m*num))
+                i=$((i + 1))
+        done
+     echo "result=$m"
+elif [[ "$choice" == 4 ]];then
+        echo "enter the numbers"
+        i=1
+        while [ $i -le $N ]; do
+                read num
+                if [ $i -eq 1 ];then
+                        d=$((num*num))
+                fi
+                d=$((d/num))
+                i=$((i + 1))
+        done
+     echo "result=$d"
+else
+    echo "enter correct choice"
+ fi                                                                       
+
