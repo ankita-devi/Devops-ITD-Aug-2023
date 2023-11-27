@@ -1,0 +1,24 @@
+#!/bin/bash
+
+echo 'choose operation to perform ==> Enter
+       1 for addition
+       2 for sustraction
+       3 for multiplication
+       4 for division'
+read choice
+
+echo 'enter 2 numbers'
+read a
+read b
+
+if [[ "$choice" == 1 ]];then
+     echo "sum=$(($a+$b))"
+elif [[ "$choice" == 2 ]];then
+     echo "result=$(($a-$b))"
+elif [[ "$choice" == 3 ]];then
+     echo "result=$(($a*$b))"
+elif [[ "$choice" == 4 ]];then
+     echo "result=$(($a/$b))"
+else
+        echo "enter correct choice"
+fi
